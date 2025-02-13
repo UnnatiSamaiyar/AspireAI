@@ -75,7 +75,7 @@ export default function Home() {
         <section className="w-full py-12 md:py24 lg:py-32 bg-background">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold mb-4">How It Works</h2>
+              <h2 className="text-3xl font-bold mb-4" >How It Works</h2>
               <p className="text-muted-foreground">
                 Four Simple teps to accelerate your career growth
               </p>
