@@ -11,7 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   Select,
@@ -26,6 +26,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import useFetch from "@/app/hooks/use-fetch";
 import { updateUser } from "@/actions/user";
+import { toast } from "sonner";
+import { Loader2 } from "lucide-react";
 
 const OnboardingForm = ({ industries }) => {
   const [selectedIndustry, setSelectedIndustry] = useState(null);
@@ -58,11 +60,16 @@ const OnboardingForm = ({ industries }) => {
         industry: formattedIndustry,
       });
     } catch (error) {
-      console.error("Onboarding error:", error);0
-
-      
+      console.error("Onboarding error:", error);
     }
   };
+  useEffect(() => {
+    if (updateResult?.success && !updateLoading) {
+      toast.success("Profile completed successfully!");
+      router.push("/dashboard");
+      router.refresh();
+    }
+  }, [updateResult, updateLoading]);
 
   const watchIndustry = watch("industry");
 
@@ -181,8 +188,15 @@ const OnboardingForm = ({ industries }) => {
                 <p className="text-sm text-red-500">{errors.bio.message} </p>
               )}
             </div>
-            <Button type="submit" className="w-full">
-              Complete Profile
+            <Button type="submit" className="w-full" disabled={updateLoading}>
+              {updateLoading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Saving...
+                </>
+              ) : (
+                "Complete Profile"
+              )}
             </Button>
           </form>
         </CardContent>
