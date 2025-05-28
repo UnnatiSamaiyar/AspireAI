@@ -61,7 +61,7 @@ export default function RootLayout({ children }) {
                       </a>
                     </li>
                     <li>
-                      <a href="#" class=" me-4 md:me-6">
+                      <a href="/privacy-policy" class=" me-4 md:me-6">
                         Privacy Policy
                       </a>
                     </li>
