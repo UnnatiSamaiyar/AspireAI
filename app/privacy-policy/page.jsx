@@ -1,13 +1,12 @@
 import Header from "@/components/header";
-import Image from "next/image";
-import Link from "next/link";
 
 export default async function PrivacyPolicyPage() {
   return (
     <>
       <div className="container mx-auto py-6">
         <Header />
-        <div className="max-w-3xl mx-auto px-4 py-8 mt-4">
+        <div className="grid-background"></div>
+        <div className="max-w-3xl mx-auto px-4 py-12 space-y-6 mt-5">
           <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
           <p className="mb-4">
             At <strong>AspireAI</strong>, we are committed to protecting your
@@ -123,10 +122,10 @@ export default async function PrivacyPolicyPage() {
             If you have any questions about this policy or how your data is
             used, please contact us at{" "}
             <a
-              href="mailto:support@aspireai.in"
+              href="mailto:contact@webforgeplus.in"
               className="text-blue-600 underline"
             >
-              support@aspireai.in
+              contact@webforgeplus.in
             </a>
             .
           </p>

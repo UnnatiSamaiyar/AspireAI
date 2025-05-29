@@ -11,7 +11,7 @@ import Image from "next/image";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "AI Career Coach",
+  title: "AspireAI - The Future of Career Intelligence",
   description: "",
 };
 
@@ -63,7 +63,7 @@ export default function RootLayout({ children }) {
                       </a>
                     </li>
                     <li>
-                      <a href="#" className=" me-4 md:me-6">
+                      <a href="/terms-of-use" className=" me-4 md:me-6">
                         Terms of Use
                       </a>
                     </li>
